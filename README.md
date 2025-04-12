@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terraform Infrastructure Project
 Student ID: 8951881
 
@@ -81,3 +82,7 @@ Common issues and solutions:
 ## License
 
 This project is licensed under the MIT License. 
+=======
+# Cloud_Architecture_Final-Individual-Project
+Cloud_Architecture_Final Individual Project
+>>>>>>> f57e8083335e21b29cc5c3951f2f6847d568d391
