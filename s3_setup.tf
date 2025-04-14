@@ -2,8 +2,20 @@
 resource "aws_s3_bucket" "terraform_state" {
   bucket = var.bucket_name
 
+  # Comment out this block if you're trying to destroy the bucket
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
+
+  tags = {
+    Name = "Terraform State Bucket"
+  }
+}
+
+# Enable Versioning on the S3 Bucket
 resource "aws_s3_bucket_versioning" "terraform_state" {
   bucket = aws_s3_bucket.terraform_state.id
+
   versioning_configuration {
     status = "Enabled"
   }
@@ -19,4 +31,8 @@ resource "aws_dynamodb_table" "terraform_locks" {
     name = "LockID"
     type = "S"
   }
-} 
+
+  tags = {
+    Name = "Terraform State Lock Table"
+  }
+}
